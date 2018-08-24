@@ -47,8 +47,7 @@ Examples:
 */
 
 function extractFullName(arr){
-    return arr.map(function(val, index, array) {
-       var obj = val[first] + ', ' + val[last];
-       return obj;
+    return arr.map(function(val) {
+        return (val.first + ' ' + val.last);
     });
 }

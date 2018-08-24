@@ -6,11 +6,13 @@ Examples:
     doubleValues([5,1,2,3,10]) // [10,2,4,6,20]
 
 */
+
 function doubleValues(arr){
-    arr.forEach(function(value){
-        value = value * 2;
+    const newArr =[];
+    arr.forEach(function(value) {
+        newArr.push(value * 2);
     });
-    return arr;
+    return newArr;
 }
 
 /*
@@ -24,7 +26,7 @@ Examples:
 function onlyEvenValues(arr){
     const newArr = [];
     arr.forEach(function(ele, index, array) {
-        if(index % 2 === 0) {
+        if(ele % 2 === 0) {
             newArr.push(ele);
         }
     });
@@ -42,7 +44,7 @@ Examples:
 function showFirstAndLast(arr){
     const newArr = [];
     arr.forEach(function(ele, index, array) {
-        newArr.push(ele.charAt(0) + ele.charAt(-1));
+        newArr.push(ele[0] + ele[ele.length-1]);
     });
     return newArr;
 }
@@ -74,7 +76,7 @@ Examples:
     vowelCount('I Am awesome and so are you') // {i: 1, a: 4, e: 3, o: 3, u: 1};
 */
 function vowelCount(str){
-    vowels = "aeiou";
+    var vowels = "aeiou";
     var obj = {};
     str.toLowerCase().split('').forEach(function(ele, index, array){
         if(vowels.indexOf(ele) !== -1) {
@@ -87,4 +89,3 @@ function vowelCount(str){
     });
     return obj;
 }
-
